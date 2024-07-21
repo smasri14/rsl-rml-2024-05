@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>recent-srch</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <br>
+  <ion-item>The results of your most recent RSL/RML search will appear here.  When you search again, previous searches will be cleared.</ion-item>
+  <ion-list>
+    <ion-item detail="false" *ngFor="let itm of chmSrv.params['recent-srch'] let i = index"
+    (click)="chmSrv.goToSrchResults(itm)"
+    >
+      <ion-label style="margin-left:10px;"> {{ itm[1][0] }} ({{ itm[1][1] }}) </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+

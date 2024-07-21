@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>recent-srch-results</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>favorites</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <br>
+  <ion-list>
+    <ion-item detail="false" *ngFor="let itm of chmSrv.params.favorites let i = index"
+    (click)="chmSrv.goToSrchResults(itm)"
+    >
+      <ion-label style="margin-left:10px;"> {{ itm[3] }} ({{ itm[4] }}) </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+
+
+

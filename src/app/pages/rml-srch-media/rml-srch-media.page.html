@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>rml-srch-media</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>Select Media</ion-item>
+
+  <ion-list *ngIf="chmSrv.params['rml-srch-scenarios'][0][0]===1">
+    <ion-item><h2>Residential</h2></ion-item>
+    <span *ngFor="let med of chmSrv.params['rml-srch-media'] let i = index">
+      <ion-item detail="false" *ngIf="med[2]==='Res'">
+        <ion-icon size="large" color="success"
+          [name]="med[0] !==0 ? 'checkmark-circle' : 'radio-button-off'"
+          (click)="chmSrv.toggleItem(med)"
+        ></ion-icon>
+        <ion-label style="margin-left:10px;"> {{ med[1] }} </ion-label>
+      </ion-item>
+    </span>
+  </ion-list>
+    
+  <ion-list *ngIf="chmSrv.params['rml-srch-scenarios'][1][0]===1">
+    <ion-item><h2>Industrial</h2></ion-item>
+    <span *ngFor="let med of chmSrv.params['rml-srch-media'] let i = index">
+      <ion-item detail="false" *ngIf="med[2]==='Ind'">
+        <ion-icon size="large" color="success"
+          [name]="med[0] !==0 ? 'checkmark-circle' : 'radio-button-off'"
+          (click)="chmSrv.toggleItem(med)"
+        ></ion-icon>
+        <ion-label style="margin-left:10px;"> {{ med[1] }} </ion-label>
+      </ion-item>
+    </span>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button (click)="chmSrv.toggleAllItems(chmSrv.params['rml-srch-media'], 1)" color="success"><span>Check All</span></ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button (click)="chmSrv.toggleAllItems(chmSrv.params['rml-srch-media'], 0)"  color="success"><span>Clear All</span></ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button (click)="chmSrv.goTo('rml-srch-results')"  color="success"><span>Next: Results</span></ion-button>
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>
+
+
+<ion-footer><ion-toolbar></ion-toolbar></ion-footer>

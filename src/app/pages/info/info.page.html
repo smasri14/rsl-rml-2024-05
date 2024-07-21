@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>info</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <br>
+  <ion-item lines="none">
+    For more information on the RSLs or RMLs click below.
+  </ion-item>
+  <br>
+
+  <ion-item (click)="goTo('info-gen')">General Information <ion-icon name="chevron-forward" slot="end"></ion-icon></ion-item>
+
+  <ion-item (click)="goTo('info-rsl')">RSL Information and Links <ion-icon name="chevron-forward" slot="end"></ion-icon></ion-item>
+
+  <ion-item (click)="goTo('info-rml')">RML Information and Links <ion-icon name="chevron-forward" slot="end"></ion-icon></ion-item>
+
+  <br><br>
+  <ion-item class="smaller" lines="none">*This app operates offline. No internet is required other than to download and follow links.</ion-item>
+</ion-content>
+

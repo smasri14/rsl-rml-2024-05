@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>rml-srch</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="false" >
+
+  <ion-list>
+    <ion-item detail="false" *ngFor="let itm of chmSrv.rslChms let i = index">
+      <ion-icon size="large" color="success"
+        [name]="itm[0][2] === 1 ? 'checkmark-circle' : 'radio-button-off'"
+        (click)="chmSrv.toggleItem(itm)"
+      ></ion-icon>
+      <ion-label style="margin-left:10px"> {{ itm[1][0] }} ({{itm[1][1]}}) </ion-label>
+    </ion-item>
+  </ion-list>
+  
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button (click)="chmSrv.goTo('rml-srch-results')" color="success"><span>Skip to RMLs</span></ion-button>
+          </ion-col>
+          <ion-col style="width:34%;">
+            <ion-button (click)="chmSrv.toggleAllItems(chmSrv.rslChms, 0)" color="success" ><span>Clear All</span></ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button (click)="chmSrv.goTo('rml-srch-thqtr')" color="success"><span>Next: THQ/TR</span></ion-button>
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>
+
+<ion-footer>
+    <ion-toolbar></ion-toolbar>
+</ion-footer>
+
+
+
+
+
+

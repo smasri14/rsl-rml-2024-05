@@ -1,0 +1,55 @@
+<!--
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [translucent]="true">  
+  <ion-header >
+    <ion-toolbar>
+      <ion-title size="large">ion-content  header</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-header>
+  <ion-toolbar>
+    <ion-title size="large">ion-content  home</ion-title>
+  </ion-toolbar>
+  </ion-header>
+</ion-content>
+
+-->
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <h2>Welcome</h2>
+  </ion-item>
+  <ion-item>
+    <p>These Regional Screening Levels (RSLs) and Removal Management Levels (RMLs) are from the Fall 2023 update.</p>
+  </ion-item>
+  <ion-item (click)="goTo('tutorial')">
+    Tutorial<ion-icon name="chevron-forward" slot="end"></ion-icon>
+  </ion-item>
+  <ion-item (click)="goTo('info-rsl')">
+    RSL Information and Links<ion-icon name="chevron-forward" slot="end"></ion-icon>
+  </ion-item>
+  <ion-item (click)="goTo('info-rml')">
+    RML Information and Links<ion-icon name="chevron-forward" slot="end"></ion-icon>
+  </ion-item>
+
+  <ion-item>
+    <p class="smaller">*This app operates offline. No internet is required other than to download this app and follow information links.</p>
+  </ion-item>
+
+
+<!--<app-footer-toolbar [isHome]="true" [isKey]="false"></app-footer-toolbar>-->
+
+</ion-content>

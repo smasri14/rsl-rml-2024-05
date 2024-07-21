@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>disclaimer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  [fullscreen]="false">
+  <br/>
+  <ion-item lines="none">
+    <p>
+      The U.S Government does not warrant or assume any legal liability or responsibility for the
+      accuracy, completeness, or usefulness of any information, apparatus, product, or process disclosed.
+    </p>
+  </ion-item>
+
+  <ion-item lines="none">
+    <p>
+      It is not the intention of this app to provide specific medical advice to the public, but rather to
+      provide users with information to better understand their health
+    </p>
+  </ion-item>
+
+  <ion-item lines="none">
+    <p>
+      This app does not endorse or recommend any commercial products, process, or services.
+    </p>
+  </ion-item>
+
+  <ion-item lines="none">
+    <p>
+      <strong>Support: </strong> <a href="mailto:RSLRMLapp@epa.gov">RML/RSL Support Team</a>
+    </p>
+  </ion-item>
+
+  <ion-item lines="none">
+    <p>
+      <strong>Application Version: </strong> {{appVersion}}
+    </p>
+  </ion-item>
+
+  <ion-item lines="none">
+    <p>
+      <strong>Data Tables as of: </strong> {{dataVersion}}
+    </p>
+  </ion-item>
+
+  <ion-item lines="none">
+    <p>
+      <strong>Substances: </strong>  {{numberOfChems}}
+    </p>
+  </ion-item>
+</ion-content>

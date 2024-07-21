@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>rsl-srch-scenarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>Select Scenario</ion-item>
+  <ion-list>
+    <ion-item detail="false" *ngFor="let itm of chmSrv.params['rsl-srch-scenarios'] let i = index">
+      <ion-icon size="large" color="success"
+        [name]="itm[0] !==0 ? 'checkmark-circle' : 'radio-button-off'"
+        (click)="chmSrv.toggleItem(itm)"
+      ></ion-icon>
+      <ion-label style="margin-left:10px;"> {{ itm[1] }} </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+  <ion-footer>
+    <ion-toolbar>
+      <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-button (click)="chmSrv.toggleAllItems(chmSrv.params['rsl-srch-scenarios'], 1)" color="success"><span>Check All</span></ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button (click)="chmSrv.toggleAllItems(chmSrv.params['rsl-srch-scenarios'], 0)"  color="success"><span>Clear All</span></ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button (click)="chmSrv.goTo('rsl-srch-media')"  color="success"><span>Next: Media</span></ion-button>
+            </ion-col>
+          </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-footer>
+  
+  <ion-footer><ion-toolbar></ion-toolbar></ion-footer>
